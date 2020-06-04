@@ -26,7 +26,7 @@ USE zapatos_rotos;
 */
 
 -- id type uuid
-CREATE TABLE tbl_products_alt (
+CREATE TABLE tbl_products (
     -- for system purpose only
     id CHAR(36) NOT NULL PRIMARY KEY,
     -- for inventory purposes
