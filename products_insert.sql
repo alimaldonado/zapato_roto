@@ -7,7 +7,8 @@ INSERT INTO tbl_products(id, code, name, price, created_at, updated_at) VALUES
 ((SELECT UUID()),'P-004','ArmyBoots', 58.75, NOW(), NOW()),
 ((SELECT UUID()),'P-005','TexasBoots', 99.95, NOW(), NOW());
 
--- official codes for meassurements in mx
+-- official codes for meassurements in MX
+-- codigos de medida oficiales para MX
 INSERT INTO tbl_packagings(id, type, code, name, created_at, updated_at) VALUES
 ((SELECT UUID()),'Múltiplos/Fracciones/Decimales',	'H87',	'Pieza', NOW(), NOW()),
 ((SELECT UUID()),'Unidades de venta', 'DPC', 'Docena de piezas', NOW(), NOW()),
