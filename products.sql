@@ -3,13 +3,18 @@ CREATE DATABASE zapatos_rotos;
 USE zapatos_rotos;
 
 -- id type uuid
-CREATE TABLE tbl_products (
+CREATE TABLE tbl_products_alt (
+    -- for system purpose only
     id CHAR(36) NOT NULL PRIMARY KEY,
+    -- for inventory purposes
+    code CHAR(5) NOT NULL,
     name VARCHAR(100) NOT NULL,
     -- aka value
     price DECIMAL(8,2) NOT NULL,
     created_at DATETIME NOT NULL,
-    updated_at DATETIME NOT NULL
+    updated_at DATETIME NOT NULL,
+    UNIQUE(code),
+    INDEX idx_product_code(code)
 ) DEFAULT CHARACTER SET utf8mb4
             COLLATE utf8mb4_general_ci
             engine = innodb;
@@ -20,7 +25,9 @@ CREATE TABLE tbl_packagings (
     type VARCHAR (100) NOT NULL,
     code VARCHAR (5) NOT NULL,
     created_at DATETIME NOT NULL,
-    updated_at DATETIME NOT NULL
+    updated_at DATETIME NOT NULL,
+    UNIQUE (code),
+    INDEX idx_packaging_code(code)
 ) DEFAULT CHARACTER SET utf8mb4
             COLLATE utf8mb4_general_ci
             engine = innodb;
