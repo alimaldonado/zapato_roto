@@ -10,7 +10,7 @@ USE zapatos_rotos;
     and when updated. Plus the field ´code´ allows to
     search by code and not by name or id (which are more complex).
     Id's type field is uuid, useful for big cuantities of data and
-    to protect secret information (e.g. how many registries the
+    to protect secret information (e.g. how many records the
     system is making in a lapse of time).
 
     ES
@@ -78,8 +78,8 @@ CREATE TABLE tbl_packagings (
     several packagings. It's a many to many
     relationship. This way, a product can be selled
     on several presentations not worrying about 
-    repating registries. Unique constraint 
-    disallows the DB to repeat registries by accident.
+    repating records. Unique constraint 
+    disallows the DB to repeat records by accident.
 
     ES
     La tabla pivote permite que un producto pueda tener 
@@ -92,7 +92,7 @@ CREATE TABLE tbl_packagings (
 CREATE TABLE tbl_products_packagings (
     product_id CHAR(36) NOT NULL,
     packaging_id CHAR(36) NOT NULL,
-    -- unique prevents repeating registries
+    -- unique prevents repeating records
     UNIQUE(product_id, packaging_id),
     CONSTRAINT fk_packaging_product_id FOREIGN KEY(product_id)
     REFERENCES tbl_products(id) ON UPDATE CASCADE ON DELETE RESTRICT,
