@@ -1,4 +1,4 @@
-# zapato_roto
+# Base de Datos "Zapato Roto"
 
 El repositorio cuenta con los tres queries necesarios: para crear tablas, para insertar y las consultas necesarias de facturas.
 
